@@ -1,0 +1,272 @@
+/*DOCUMENTO CSS*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #fff4d4;
+    color: #2b2b2b;
+}
+
+main section {
+    background-color: #ffe7a0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #aa6e24;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f4d068;
+    padding-bottom: 8px;
+}
+
+.header-principal {
+    background-color: #aa6e24;
+    color: #ffffff;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contenedor-header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-principal h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.nav-principal ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Selector de atributo en enlace */
+.nav-principal a[href^="#"] {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Pseudoclase :hover */
+.nav-principal a:hover {
+    background-color: #f4d068;
+    color: #2b2b2b;
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================================== */
+.contenedor-principal {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECCIÓN 1: INGREDIENTES (FLEXBOX SIDE-BY-SIDE)
+   ========================================================================== */
+.seccion-ingredientes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.columna-listado {
+    flex: 1;
+}
+
+.lista-ingredientes {
+    list-style: none;
+}
+
+/* Pseudoclase :nth-child */
+.lista-ingredientes li:nth-child(odd) {
+    background-color: #fff9eb;
+}
+
+.lista-ingredientes li {
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.lista-ingredientes i {
+    color: #2e7d32;
+    margin-right: 8px;
+}
+
+.columna-imagen {
+    flex: 1;
+}
+
+.img-destacada {
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   SECCIÓN 2: PREPARACIÓN
+   ========================================================================== */
+.lista-pasos {
+    list-style: none;
+}
+
+.lista-pasos li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+    background: #fdfdfd;
+    padding: 12px;
+    border-left: 4px solid #aa6e24;
+    border-radius: 4px;
+}
+
+.numero-paso {
+    background-color: #aa6e24;
+    color: #ffffff;
+    font-weight: 800;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.galeria-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.galeria-item {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.05);
+}
+
+.video-contenedor {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-contenedor iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.footer-principal {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.footer-principal strong {
+    color: #f4d068;
+}
+
+@media (min-width: 768px) {
+    .header-principal .contenedor-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .seccion-ingredientes {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .galeria-contenedor {
+        flex-direction: row;
+    }
+
+    .footer-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 40px auto 0 auto;
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+@media (min-width: 1380px) {
+    .contenedor-principal {
+        max-width: 1300px;
+    }
+
+    main section {
+        padding: 36px;
+        margin-bottom: 40px;
+    }
+
+    .header-principal h1 {
+        font-size: 2.4rem;
+    }
+
+    .columna-listado h2 {
+        font-size: 2.2rem;
+    }
+
+    .img-destacada {
+        max-height: 380px;
+    }
+
+    .galeria-item img {
+        height: 280px;
+    }
+}
